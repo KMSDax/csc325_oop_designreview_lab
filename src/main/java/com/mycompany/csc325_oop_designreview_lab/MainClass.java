@@ -4,6 +4,8 @@
 
 package com.mycompany.csc325_oop_designreview_lab;
 
+import java.util.Scanner;
+
 /**
  *
  * @author MoaathAlrajab
@@ -11,30 +13,31 @@ package com.mycompany.csc325_oop_designreview_lab;
 public class MainClass {
 
  public static void main(String[] args) {
+	 Scanner s = new Scanner(System.in);
 		// ToDo 5: Fix the error
-
-		// ToDo 6: Fix the constructor of the Student class
-
-                // Todo 7: Create two classes for Freshman and Senior 
-
-                // ToDo 8: The senior class should have a minimum of 85 credits  
-
-		// ToDo 9: Add a toString method for the Student class
-		// ToDo 10: Add a toString method for the Freshman class
-
+	 //I couldn't resolve this the original way you had it where the object was initialized as Student
+	 //I changed them to their respective classes I also converted from short to int to simplify the solution..
 		Student std1= new Student("James", 20);
-                // ToDo 11: Add a toString method for the Senior class
 
-		Freshman std1= new Student("James", 20, 12); // name, age, credits
+		Freshman std2= new Freshman("James", 20, 12); // name, age, credits
+	//Changed this to std3 from std2, wasn't sure if you wanted us to update the other Student to Freshman and update the variables?
+        Senior std3 = new Senior("John", 30, 50);
 
-                Senior std2 = new Student("John", 30, 90);
-
+	//I used a loop here to give each student an array based on the instructions?
+	//I wasn't sure if you wanted it done differently.
+		Student[] Students = {std1,std2,std3};
 		// ToDo 12: Set the gpa of the student using the scanner and user
-		// 			input and then print the output.
+		for(Student stu: Students){
+			// 			input and then print the output.
+			System.out.println("Please input the GPA for " + stu.getName());
+			double gpa = s.nextDouble();
+			stu.setGPA(gpa);
+		}
 
-		System.out.println(std1);
 
-                System.out.println(std2);
+		System.out.println(std1 + "\n=================");
+		System.out.println(std2 + "\n=================");
+	 	System.out.println(std3);
 
 		// ToDo 13: add comments and explain your code
 
